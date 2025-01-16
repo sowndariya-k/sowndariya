@@ -250,7 +250,7 @@ const projects = {
   technologies: " HTML, CSS, JavaScript, Bootstrap",
     category: " Frontend",
     status: " Completed",
-    link: " https://github.com/Karthi282k/zekesys",
+    link: " https://zekesys.com/",
   },
   todo: {
     image: "assets/img/work1.jpg",
@@ -265,7 +265,7 @@ const projects = {
     technologies: " HTML, CSS, JavaScript, Local Storage",
     category: " Frontend",
     status: " Completed",
-    link: " https://github.com/sowndariya-k/TODO",
+    link: " https://sowndariya-k.github.io/TODO/",
   },
   freelanceProject: {
     image: "assets/img/port3.jpg",
@@ -279,7 +279,7 @@ const projects = {
     technologies: " HTML, CSS, JavaScript",
     category: " Frontend",
     status: " Completed",
-    link: " https://github.com/sowndariya-k/kavinkumar",
+    link: " hhttps://r-kavinkumar.netlify.app/",
   }
 };
 
