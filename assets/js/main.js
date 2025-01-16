@@ -1,10 +1,3 @@
-/**
-* Template Name: iPortfolio
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
@@ -120,38 +113,6 @@
     selector: '.glightbox'
   });
 
-  /**
-   * Init isotope layout and filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
-
-  });
 
   /**
    * Init swiper sliders
@@ -215,24 +176,15 @@
 })();
 
 
-function toggleTab(tab) {
-  const educationTab = document.getElementById('education');
-  const workTab = document.getElementById('work');
-  
-  // Default state is education
-  if (tab === 'education') {
-    educationTab.classList.add('active');
-    workTab.classList.remove('active');
-  } else if (tab === 'work') {
-    workTab.classList.add('active');
-    educationTab.classList.remove('active');
-  }
+function toggleTab(tabId) {
+  const tabs = document.querySelectorAll('.qualification-content');
+  tabs.forEach((tab) => {
+    tab.classList.remove('active');
+  });
+
+  document.getElementById(tabId).classList.add('active');
 }
 
-// Ensure the default tab is set to 'education' on page load
-document.addEventListener('DOMContentLoaded', () => {
-  toggleTab('education');
-});
 
 
 // Get all card links
@@ -263,5 +215,128 @@ window.addEventListener('click', function (event) {
   if (event.target.classList.contains('popup-overlay')) {
     event.target.classList.remove('show');
   }
+});
+
+function filterProjects(category) {
+  const projects = document.querySelectorAll('.project-card');
+  const filterItems = document.querySelectorAll('.filter-item');
+
+  // Update active class on filter buttons
+  filterItems.forEach(item => item.classList.remove('active'));
+  document.querySelector(`[data-filter="${category}"]`).classList.add('active');
+
+  // Show/hide projects based on the selected category
+  projects.forEach(project => {
+    if (category === 'all' || project.dataset.category === category) {
+      project.style.display = 'block'; // Show matching projects
+    } else {
+      project.style.display = 'none'; // Hide non-matching projects
+    }
+  });
+}
+
+
+const projects = {
+  zekesys: {
+    image: "assets/img/work5.jpg",
+  description: "Developed a professional business website for Zekesys, showcasing their services and enhancing their online presence with a user-friendly interface.",
+  features: [
+    "Modern and responsive design for seamless accessibility across devices",
+    "Detailed service sections to highlight business offerings",
+    "Contact form integration for client inquiries",
+    "Optimized navigation for better user experience",
+    "Custom graphics and visuals tailored to the brand's identity"
+  ],
+  technologies: " HTML, CSS, JavaScript, Bootstrap",
+    category: " Frontend",
+    status: " Completed",
+    link: " https://github.com/Karthi282k/zekesys",
+  },
+  todo: {
+    image: "assets/img/work1.jpg",
+    description: "A user-friendly and efficient Todo List application designed for effective task management. Users can easily add, edit, delete, and track tasks with a sleek interface.",
+  features: [
+    "Add, edit, and delete tasks",
+    "Track task status (completed or pending)",
+    "Save tasks locally using local storage for persistent data",
+    "Dynamic updates for task counts (total, completed, and pending)",
+    "Responsive and clean UI for an intuitive user experience"
+  ],
+    technologies: " HTML, CSS, JavaScript, Local Storage",
+    category: " Frontend",
+    status: " Completed",
+    link: " https://github.com/sowndariya-k/TODO",
+  },
+  freelanceProject: {
+    image: "assets/img/port3.jpg",
+    description: " A custom-designed personal portfolio website developed as a freelance project to meet the client's specific requirements and showcase their professional profile.",
+    features: [
+      "Responsive and modern design for accessibility across devices",
+    "Dedicated portfolio sections for projects and achievements",
+    "Integrated contact form for seamless communication",
+    "Customizable layout tailored to the client's needs"
+  ],
+    technologies: " HTML, CSS, JavaScript",
+    category: " Frontend",
+    status: " Completed",
+    link: " https://github.com/sowndariya-k/kavinkumar",
+  }
+};
+
+function openPopup(projectKey) {
+  const project = projects[projectKey];
+  if (!project) return;
+
+  document.getElementById("popup-image").src = project.image;
+  document.getElementById("popup-description").textContent = project.description;
+
+  const featuresList = document.getElementById("popup-features");
+  featuresList.innerHTML = project.features
+    .map((feature) => `<li>${feature}</li>`)
+    .join("");
+
+  document.getElementById("popup-technologies").textContent = project.technologies;
+  document.getElementById("popup-category").textContent = project.category;
+  document.getElementById("popup-status").textContent = project.status;
+  document.getElementById("popup-link").href = project.link;
+
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+//contact
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Collect form data
+      const name = document.getElementById('name-field').value.trim();
+      const email = document.getElementById('email-field').value.trim();
+      const service = document.getElementById('service-field').value.trim();
+      const message = document.getElementById('message-field').value.trim();
+
+      // Validation
+      if (!name || !email || !service || !message) {
+          alert('All fields are required.');
+          return;
+      }
+
+      // Prepare email body
+      const emailBody = `
+          Name: ${name}
+          Email: ${email}
+          Service: ${service}
+          Message: ${message}
+      `;
+
+      // Redirect to mailto link
+      const mailToLink = `mailto:sowndariyadeveloper@gmail.com?subject=Service Required - ${encodeURIComponent(service)}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = mailToLink;
+  });
 });
 
