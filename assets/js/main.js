@@ -279,8 +279,25 @@ const projects = {
     technologies: " HTML, CSS, JavaScript",
     category: " Frontend",
     status: " Completed",
-    link: " hhttps://r-kavinkumar.netlify.app/",
-  }
+    link: " https://r-kavinkumar.netlify.app/",
+  },
+
+  logAlertProject: {
+  image: "assets/img/logalert.png", 
+  description: "A real-time log monitoring and alerting system developed to track application logs, identify error patterns, and instantly notify stakeholders using cloud-based services. The system is serverless and scalable, making it ideal for modern applications and microservice-based architectures.",
+  features: [
+    "Monitors and streams real-time application logs using AWS CloudWatch",
+    "Detects critical logs such as ERROR, CRITICAL, and 5xx codes",
+    "Automatically sends email alerts via Amazon SNS when issues are detected",
+    "Scheduled execution every 5 minutes using AWS Lambda",
+    "Designed with secure IAM roles following the least-privilege principle"
+  ],
+  technologies: "AWS (CloudWatch, Lambda, SNS), Python",
+  category: "Cloud",
+  status: "Completed",
+  link: "https://github.com/sowndariya-k/LogAlert-AWS-Monitoring"
+}
+
 };
 
 function openPopup(projectKey) {
@@ -301,6 +318,7 @@ function openPopup(projectKey) {
   document.getElementById("popup-link").href = project.link;
 
   document.getElementById("popup").style.display = "flex";
+  
 }
 
 function closePopup() {
