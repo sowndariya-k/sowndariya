@@ -583,6 +583,10 @@ section,
 }
 
 .hero p {
+  max-width: 1000px;
+  margin: 0 auto;          /* Centers the paragraph */
+  padding: 0 20px;         /* Adds left and right spacing */
+  text-align: center; 
   font-size: 1rem;
   margin-bottom: 2rem;
   color: black;
@@ -655,6 +659,7 @@ html {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #333;
+  font-style: ;
   text-align: center; /* Center-align the text */
   padding-left: 20px;  /* Add padding to left */
   padding-right: 20px; /* Add padding to right */
@@ -906,8 +911,7 @@ html {
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-
-
+/* Portfolio Section */
 .portfolio {
   text-align: center;
   padding: 2rem;
@@ -946,6 +950,7 @@ html {
   color: var(--contrast-color);
 }
 
+/* Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -953,7 +958,6 @@ html {
   justify-content: center;
   padding: 0 1rem;
 }
-
 
 .project-card {
   background-color: var(--surface-color);
@@ -964,7 +968,6 @@ html {
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 1px 4px #dedbe0;
 }
-
 
 .project-card:hover {
   transform: scale(1.05);
@@ -995,12 +998,15 @@ html {
 .project-link:hover {
   color: var(--accent-color);
 }
+
 .project-links {
   display: flex;
   justify-content: space-between;
 }
+
+/* Popup */
 .popup-overlay {
-  display: none; /* Changed from flex to none to hide by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -1011,17 +1017,21 @@ html {
   align-items: center;
   justify-content: center;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .popup-overlay.active {
   display: flex;
 }
+
 body.popup-open {
-  overflow: hidden; /* Prevents background scrolling when popup is open */
+  overflow: hidden;
 }
+
+
+
 .popup-content {
-  position: relative;
+  position: relative; /* Crucial for positioning the absolute button */
   background: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -1031,29 +1041,37 @@ body.popup-open {
   overflow-y: auto;
   overflow-x: hidden;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  /* Make sure overflow is visible for the close button to be outside */
+  overflow: visible; 
 }
+
 .popup-close {
   position: absolute;
-  top: 20px; /* Now relative to popup-overlay, not popup-content */
-  right: 20px;
+  /* Use values greater than half the button's width/height to push it fully outside. */
+  /* For a 40px button, values like -25px or -30px will push it further out. */
+  top: -35px;   
+  right: -40px; 
   width: 40px;
   height: 40px;
-  font-size: 24px;
-  background-color: #333;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 50%;
+  font-size: 25px;
+  background-color: transparent; 
+  color: white; 
+  border: 2px solid white;
+  border-radius: 4px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1001;
+  z-index: 10000; /* Increased z-index for visibility */
   transition: all 0.3s ease;
 }
+
 .popup-close:hover {
-  border-radius: 0;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  color: white;
+  border-radius: 50%;
 }
+
 
 .main-details {
   display: flex;
@@ -1063,27 +1081,27 @@ body.popup-open {
 }
 
 .popup-image-wrapper {
-  flex: none; /* Do not allow image wrapper to grow/shrink based on flex */
-  width: 40%; /* Approximate width for the image column from the image */
-  min-width: 300px; /* Minimum width before wrapping or overflowing */
+  flex: none;
+  width: 40%;
+  min-width: 300px;
 }
 
 .popup-image-wrapper img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  height: auto;
   border-radius: 10px;
   margin-bottom: 0;
 }
 
 .popup-text-and-details-container {
-  flex: 1; /* This container takes the remaining flexible space */
+  flex: 1;
   display: flex;
-  flex-direction: column; /* Stacks textbox and detailbox vertically */
-  gap: 20px; /* Space between textbox and detailbox */
+  flex-direction: column;
+  gap: 20px;
 }
 
 .textbox {
-  flex: none; /* Content determines height */
+  flex: none;
   padding-right: 0;
 }
 
@@ -1112,7 +1130,7 @@ body.popup-open {
 }
 
 .detailbox {
-  flex: none; /* Content determines height */
+  flex: none;
   margin-top: 0;
 }
 
@@ -1123,8 +1141,8 @@ body.popup-open {
 
 .detailbox ul li {
   display: flex;
-  justify-content: space-between; /* Aligns label to left and value to right */
-  align-items: flex-start; /* Aligns items to the top (important for multiline values) */
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 10px;
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
@@ -1133,15 +1151,14 @@ body.popup-open {
 .detailbox .first {
   font-weight: bold;
   color: #544274;
-  margin-bottom: 0;
-  flex-shrink: 0; /* Prevents the label from shrinking */
-  padding-right: 10px; /* Space between label and value */
+  padding-right: 10px;
+  flex-shrink: 0;
 }
 
 .detailbox .second {
   color: #7c3aed;
-  text-align: right; /* Aligns the value to the right */
-  flex-grow: 1; /* Allows the value to grow and take available space */
+  text-align: right;
+  flex-grow: 1;
 }
 
 .detailbox a {
@@ -1153,25 +1170,39 @@ body.popup-open {
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* Responsive Fixes */
 @media (max-width: 768px) {
+  .project-card {
+    width: calc(50% - 20px);
+  }
+
   .main-details {
-    flex-direction: column; /* Stack columns vertically on smaller screens */
+    flex-direction: column;
   }
-  @media (max-width: 768px) {
+
   .popup-close {
-    top: 10px;
     right: 10px;
+    top: 10px;
   }
-}
+
 
 
   .popup-image-wrapper,
   .popup-text-and-details-container {
-    flex: none;
     width: 100%;
     min-width: unset;
   }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 100%;
+  }
+
+  .popup-content {
+    width: 95%;
+  }
+}
 
 
 /*--------------------------------------------------------------
@@ -1384,25 +1415,3 @@ body.popup-open {
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .project-card {
-    width: calc(50% - 20px);
-  }
-}
-@media (max-width: 480px) {
-  .project-card {
-    width: 100%;
-  }
-  .popup-content {
-    width: 95%;
-  }
-}
-
-/*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
-
-
-
