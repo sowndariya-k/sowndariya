@@ -1195,10 +1195,36 @@ body.popup-open {
   .project-card {
     width: 100%;
   }
-
+  
   .popup-content {
-    width: 95%;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
+
+  .popup-overlay {
+    align-items: flex-start; /* So popup doesn't push content down */
+    padding: 10px;           /* Prevent content touching screen edges */
+  }
+
+  .popup-image-wrapper {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .popup-text-and-details-container {
+    width: 100%;
+  }
+
+  .main-details {
+    flex-direction: column;
+  }
+}
+
 }
 
 
