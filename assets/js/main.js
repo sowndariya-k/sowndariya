@@ -279,9 +279,10 @@ const projects = {
     technologies: " HTML, CSS, JavaScript",
     category: " Frontend",
     status: " Completed",
-    link: " https://r-kavinkumar.netlify.app/",
+    link: " https://kavinkumar-r.netlify.app/",
   },
 
+  
   logAlertProject: {
   image: "assets/img/logalert.png", 
   description: "A real-time log monitoring and alerting system developed to track application logs, identify error patterns, and instantly notify stakeholders using cloud-based services. The system is serverless and scalable, making it ideal for modern applications and microservice-based architectures.",
@@ -297,7 +298,6 @@ const projects = {
   status: "Completed",
   link: "https://github.com/sowndariya-k/LogAlert-AWS-Monitoring"
 }
-
 };
 
 function openPopup(projectKey) {
@@ -318,7 +318,6 @@ function openPopup(projectKey) {
   document.getElementById("popup-link").href = project.link;
 
   document.getElementById("popup").style.display = "flex";
-  
 }
 
 function closePopup() {
