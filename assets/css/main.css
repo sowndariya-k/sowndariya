@@ -1190,12 +1190,14 @@ body.popup-open {
     min-width: unset;
   }
 }
-
 @media (max-width: 480px) {
   .project-card {
     width: 100%;
   }
-  
+} 
+
+
+ @media (max-width: 480px) {
   .popup-content {
     width: 100vw !important;
     max-width: 100vw !important;
@@ -1225,7 +1227,6 @@ body.popup-open {
   }
 }
 
-}
 
 
 /*--------------------------------------------------------------
