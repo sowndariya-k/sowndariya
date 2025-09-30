@@ -998,6 +998,31 @@ html {
 }
 
 /* Popup */
+
+
+/* Default: mobile-friendly stacked layout */
+.popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Desktop: side-by-side layout */
+@media (min-width: 768px) {
+  .popup-body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .popup-image {
+    max-width: 40%;
+  }
+
+  .popup-details {
+    flex: 1;
+  }
+}
+
 .popup-overlay {
   display: none;
   position: fixed;
