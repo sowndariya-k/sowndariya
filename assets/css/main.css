@@ -1060,7 +1060,7 @@ body.popup-open {
   overflow-x: hidden;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   /* Make sure overflow is visible for the close button to be outside */
-  overflow: visible; 
+  /*overflow: visible; */
 }
 
 .popup-close {
