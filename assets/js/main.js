@@ -250,7 +250,6 @@ function filterProjects(category) {
  */
 const projects = {
   zekesys: {
-<<<<<<< HEAD
     image: "assets/img/zekesys.png",
   description: "Developed a professional business website for Zekesys, showcasing their services and enhancing their online presence with a user-friendly interface.",
   features: [
@@ -329,70 +328,6 @@ spendWiseProject: {
   link: "https://github.com/sowndariya-k/SpendWise"
 }
 
-=======
-    image: "assets/img/work5.jpg",
-    description:
-      "Developed a professional business website for Zekesys, showcasing their services and enhancing their online presence with a user-friendly interface.",
-    features: [
-      "Modern and responsive design for seamless accessibility across devices",
-      "Detailed service sections to highlight business offerings",
-      "Contact form integration for client inquiries",
-      "Optimized navigation for better user experience",
-      "Custom graphics and visuals tailored to the brand's identity",
-    ],
-    technologies: "HTML, CSS, JavaScript, Bootstrap",
-    category: "Frontend",
-    status: "Completed",
-    link: "https://zekesys.com/",
-  },
-  todo: {
-    image: "assets/img/work1.jpg",
-    description:
-      "A user-friendly and efficient Todo List application designed for effective task management. Users can easily add, edit, delete, and track tasks with a sleek interface.",
-    features: [
-      "Add, edit, and delete tasks",
-      "Track task status (completed or pending)",
-      "Save tasks locally using local storage for persistent data",
-      "Dynamic updates for task counts (total, completed, and pending)",
-      "Responsive and clean UI for an intuitive user experience",
-    ],
-    technologies: "HTML, CSS, JavaScript, Local Storage",
-    category: "Frontend",
-    status: "Completed",
-    link: "https://sowndariya-k.github.io/TODO/",
-  },
-  freelanceProject: {
-    image: "assets/img/port3.jpg",
-    description:
-      "A custom-designed personal portfolio website developed as a freelance project to meet the client's specific requirements and showcase their professional profile.",
-    features: [
-      "Responsive and modern design for accessibility across devices",
-      "Dedicated portfolio sections for projects and achievements",
-      "Integrated contact form for seamless communication",
-      "Customizable layout tailored to the client's needs",
-    ],
-    technologies: "HTML, CSS, JavaScript",
-    category: "Frontend",
-    status: "Completed",
-    link: "https://kavinkumar-r.netlify.app/",
-  },
-  logAlertProject: {
-    image: "assets/img/logalert.png",
-    description:
-      "A real-time log monitoring and alerting system developed to track application logs, identify error patterns, and instantly notify stakeholders using cloud-based services. The system is serverless and scalable, making it ideal for modern applications and microservice-based architectures.",
-    features: [
-      "Monitors and streams real-time application logs using AWS CloudWatch",
-      "Detects critical logs such as ERROR, CRITICAL, and 5xx codes",
-      "Automatically sends email alerts via Amazon SNS when issues are detected",
-      "Scheduled execution every 5 minutes using AWS Lambda",
-      "Designed with secure IAM roles following the least-privilege principle",
-    ],
-    technologies: "AWS (CloudWatch, Lambda, SNS), Python",
-    category: "Cloud",
-    status: "Completed",
-    link: "https://github.com/sowndariya-k/LogAlert-AWS-Monitoring",
-  },
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 };
 
 function openPopup(projectKey) {

@@ -992,36 +992,7 @@ html {
   justify-content: space-between;
 }
 
-<<<<<<< HEAD
 /* Popup Overlay */
-=======
-/* Popup */
-
-
-/* Default: mobile-friendly stacked layout */
-.popup-body {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Desktop: side-by-side layout */
-@media (min-width: 768px) {
-  .popup-body {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .popup-image {
-    max-width: 40%;
-  }
-
-  .popup-details {
-    flex: 1;
-  }
-}
-
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 .popup-overlay {
   display: none;
   position: fixed;
@@ -1045,84 +1016,47 @@ body.popup-open {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
 /* Popup Content Container */
 .popup-content {
   position: relative;
-=======
-
-
-.popup-content {
-  position: relative; /* Crucial for positioning the absolute button */
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
   background: #fff;
   padding: 20px;
   border-radius: 10px;
   max-width: 900px;
   width: 90%;
-<<<<<<< HEAD
   box-sizing: border-box; /* Include padding in width */
   max-height: 90vh;
   overflow-y: auto; /* scroll if content is too tall */
   overflow-x: hidden; /* prevent horizontal overflow */
   margin: 0 auto;
-=======
-  max-height: 90vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  /* Make sure overflow is visible for the close button to be outside */
-  /*overflow: visible; */
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 }
 
 .popup-close {
   position: absolute;
-<<<<<<< HEAD
   top: 10px;        /* inside the popup box near top */
   right: 10px;      /* inside the popup box near right */
-=======
-  /* Use values greater than half the button's width/height to push it fully outside. */
-  /* For a 40px button, values like -25px or -30px will push it further out. */
-  top: -35px;   
-  right: -40px; 
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
   width: 40px;
   height: 40px;
   font-size: 25px;
   background-color: transparent; 
-<<<<<<< HEAD
   color: #7c3aed;  /* make it visible */
   border: 2px solid #7c3aed; /* matching border */
-=======
-  color: white; 
-  border: 2px solid white;
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
   border-radius: 4px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
   z-index: 10000;
-=======
-  z-index: 10000; /* Increased z-index for visibility */
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
   transition: all 0.3s ease;
 }
 
 .popup-close:hover {
   background-color: transparent;
-<<<<<<< HEAD
   color: #5a1dbf; /* slightly darker on hover */
-=======
-  color: white;
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
   border-radius: 50%;
 }
 
 
-<<<<<<< HEAD
 /* Main layout - always vertical */
 .main-details {
   display: flex;
@@ -1139,26 +1073,12 @@ body.popup-open {
   max-width: 600px;
   margin: 0 auto;
   box-sizing: border-box;
-=======
-.main-details {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  padding-top: 0;
-}
-
-.popup-image-wrapper {
-  flex: none;
-  width: 40%;
-  min-width: 300px;
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 }
 
 .popup-image-wrapper img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-<<<<<<< HEAD
   display: block;
 }
 
@@ -1176,21 +1096,6 @@ body.popup-open {
 /* Text Box */
 .textbox {
   width: 100%;
-=======
-  margin-bottom: 0;
-}
-
-.popup-text-and-details-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.textbox {
-  flex: none;
-  padding-right: 0;
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 }
 
 .textbox h3 {
@@ -1206,10 +1111,7 @@ body.popup-open {
   line-height: 1.6;
 }
 
-<<<<<<< HEAD
 /* Features List */
-=======
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 .features-list {
   list-style-type: disc;
   padding-left: 20px;
@@ -1221,24 +1123,15 @@ body.popup-open {
   margin-bottom: 8px;
 }
 
-<<<<<<< HEAD
 /* Detail Box */
 .detailbox {
   width: 100%;
-=======
-.detailbox {
-  flex: none;
-  margin-top: 0;
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 }
 
 .detailbox ul {
   list-style: none;
   padding: 0;
-<<<<<<< HEAD
   margin: 0;
-=======
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 }
 
 .detailbox ul li {
@@ -1248,10 +1141,7 @@ body.popup-open {
   margin-bottom: 10px;
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
-<<<<<<< HEAD
   word-wrap: break-word; /* prevent overflow */
-=======
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
 }
 
 .detailbox .first {
@@ -1278,35 +1168,9 @@ body.popup-open {
 
 /* Responsive Fixes */
 @media (max-width: 768px) {
-<<<<<<< HEAD
   .popup-content {
     width: 95%;
     max-width: 95%;
-=======
-  .main-details {
-    flex-direction: column;
-  }
-
-  .popup-close {
-    right: 10px;
-    top: 10px;
-  }
-.projects-grid {
-    grid-template-columns: 1fr; /* ✅ Only one column on mobile */
-    gap: 1.5rem; /* Optional: slightly smaller gap for better stacking */
-  }
-
-  .project-card {
-    width: 100%; /* ✅ Use full width of container */
-  }
-}
-
-
-  .popup-image-wrapper,
-  .popup-text-and-details-container {
-    width: 100%;
-    min-width: unset;
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
   }
 
   .popup-close {
@@ -1322,7 +1186,6 @@ body.popup-open {
   .project-card {
     width: 100%;
   }
-<<<<<<< HEAD
 }
 
 @media (max-width: 480px) {
@@ -1336,25 +1199,6 @@ body.popup-open {
   .popup-overlay {
     align-items: flex-start;
     padding: 10px;
-=======
-} 
-
-
- @media (max-width: 480px) {
-  .popup-content {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  .popup-overlay {
-    align-items: flex-start; /* So popup doesn't push content down */
-    padding: 10px;           /* Prevent content touching screen edges */
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
   }
 
   .popup-image-wrapper {
@@ -1364,10 +1208,7 @@ body.popup-open {
 
   .popup-text-and-details-container {
     width: 100%;
-<<<<<<< HEAD
     padding: 0 5px;
-=======
->>>>>>> 8b2755c62eca2d7a0f5dcca32532e826aa50b0a8
   }
 
   .main-details {
