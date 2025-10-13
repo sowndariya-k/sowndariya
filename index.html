@@ -58,7 +58,7 @@
         <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="index.html#skill"><i class="bi bi-code-square  navicon"></i> Skills</a></li>
         <li><a href="index.html#portfolio"><i class="bi bi-file-earmark-text navicon"></i> Project</a></li>
-        <li><a href="index.html#Blog"><i class="bi bi-bing navicon"></i> Blog</a></li>
+        <li><a href="index.html#qualification"><i class="bi bi-bing navicon"></i> Qualification</a></li>
         <li><a href="index.html#testimonials"><i class="bi bi-quote navicon"></i>Testimonial</a></li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
@@ -74,7 +74,7 @@
   <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
     <h1>Hey, I'm Sowndariya</h1>
     <h3>Full-Stack Web Developer</h3>
-    <p>I’m passionate about building scalable, user-focused web applications and exploring the world of technology through real-time projects and continuous learning.</p>
+    <p>I believe great software starts with real problems - and I’m here to solve them with smart, scalable, and user-focused solutions.</p>
     <a href="#contact" class="btn btn-primary">Get in Touch</a>
     <div class="scroll-down mt-4">
       <a href="#about" class="down-arrow">
@@ -90,15 +90,9 @@
   <div class="container text-center" >
     <h2 class="title">About Me</h2>
     <p class="about-description py-3">
-      I'm Sowndariya K, a dedicated and quick-learning full-stack developer with a strong passion for creating innovative solutions. Currently pursuing my B.Tech in IT from Knowledge Institute of Technology.
-      <br>
-        I'm committed to staying up-to-date with the latest technologies and trends in the industry. 
-      <br>
-      I'm well-equipped to tackle complex projects. My proficiency in HTML, CSS, JavaScript, MongoDB, and Bootstrap enables me to craft visually appealing and functional interfaces.
-      <br>
-      I'm excited to leverage my skills to contribute to projects that make a positive impact.
+      I'm an aspiring software developer with a passion for building impactful and user-centric solutions. With hands-on experience in 10+ web projects, I specialize in creating clean, functional interfaces using modern technologies. I'm currently exploring AWS Cloud, with a growing focus on cloud security and scalable architectures. I actively take part in tech events and certified courses to stay updated, and I enjoy working in collaborative teams.I love solving real problems, constantly learning, and building secure, impactful applications that make a difference.
     </p>
-    <a href="assets/img/Sowndariya K.pdf" class="resume-btn" target="_blank">
+    <a href="assets/img/SOWNDARIYA_K.pdf" class="resume-btn" target="_blank">
       View Resume
     </a>
   </div>
@@ -152,6 +146,10 @@
     <div class="skill-box">
       <img src="https://img.icons8.com/color/100/python.png" alt="Python">
     </div>
+
+    <div class="skill-box">
+      <img src="https://ccweb.imgix.net/https%3A%2F%2Fwww.classcentral.com%2Fimages%2Flogos%2Fproviders%2Faws-skill-builder-hz.png?auto=format&ixlib=php-4.1.0&s=6f2cda6ba19843d0e736e9389e58ea83g" alt="AWS">
+    </div>
   </div>
 </div>
 </div>
@@ -167,7 +165,7 @@
       <div class="filters">
         <span class="filter-item active" data-filter="all" onclick="filterProjects('all')">All</span>
         <span class="filter-item" data-filter="Frontend" onclick="filterProjects('Frontend')">Frontend</span>
-        <span class="filter-item" data-filter="Mern" onclick="filterProjects('Mern')">Mern</span>
+        <span class="filter-item" data-filter="Cloud" onclick="filterProjects('Cloud')">Cloud</span>
       </div>
       <div class="projects-grid">
         <div class="project-card" data-category="Frontend" onclick="openPopup('zekesys')">
@@ -192,11 +190,30 @@
           <img src="assets/img/port3.jpg" alt="Freelance project" class="project-image">
           <h3 class="project-title">Freelance Project</h3>
           <div class="project-links">
-            <a href="https://r-kavinkumar.netlify.app/" class="project-link" target="_blank">Demo →</a>
+            <a href="https://kavinkumar-r.netlify.app/" class="project-link" target="_blank">Demo →</a>
             <a href="https://github.com/sowndariya-k/kavinkumar" class="project-link" target="_blank">Source →</a>
           </div>
         </div>
+        <div class="project-card" data-category="Cloud" onclick="openPopup('logAlertProject')">
+          <img src="assets/img/logalert.png" alt="Logalert" class="project-image">
+          <h3 class="project-title">LogAlert Monitoring</h3>
+          <div class="project-links">
+            <a href="https://github.com/sowndariya-k/LogAlert-AWS-Monitoring" class="project-link" target="_blank">Demo →</a>
+            <a href="https://github.com/sowndariya-k/LogAlert-AWS-Monitoring" class="project-link" target="_blank">Source →</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="Web Application" onclick="openPopup('spendWiseProject')">
+  <img src="assets/img/spend.png" alt="SpendWise" class="project-image">
+  <h3 class="project-title">SpendWise Finance Tracker</h3>
+  <div class="project-links">
+    <a href="https://github.com/sowndariya-k/SpendWise" class="project-link" target="_blank">Demo →</a>
+    <a href="https://github.com/sowndariya-k/SpendWise" class="project-link" target="_blank">Source →</a>
+  </div>
+</div>
+
       </div>
+      
       
     </section>
     
@@ -204,35 +221,41 @@
     <div id="popup" class="popup-overlay" onclick="closePopup()">
       <div class="popup-content" onclick="event.stopPropagation()">
         <span class="popup-close" onclick="closePopup()">×</span>
-        <div class="main-details">
-          <div class="popup-image-wrapper">
-            <img id="popup-image" src="" alt="Project Image">
-          </div>
-          <div class="textbox">
-            <p id="popup-description"></p>
-            <ul id="popup-features" class="features-list"></ul>
-          </div>
-          <div class="detailbox">
-            <ul>
-              <li>
-                <span class="first">Technologies Used</span>
-                <span class="second" id="popup-technologies"></span>
-              </li>
-              <li>
-                <span class="first">Category</span>
-                <span class="second" id="popup-category"></span>
-              </li>
-              <li>
-                <span class="first">Status</span>
-                <span class="second" id="popup-status"></span>
-              </li>
-              <li>
-                <span class="first">Project Link</span>
-                <a id="popup-link" href="" target="_blank"><i class="bi bi-github"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+       <div class="main-details">
+  <div class="popup-image-wrapper">
+    <img id="popup-image" src="" alt="Project Image">
+  </div>
+
+  <!-- ✅ Add this wrapper -->
+  <div class="popup-text-and-details-container">
+    <div class="textbox">
+      <p id="popup-description"></p>
+      <ul id="popup-features" class="features-list"></ul>
+    </div>
+
+    <div class="detailbox">
+      <ul>
+        <li>
+          <span class="first">Technologies Used</span>
+          <span class="second" id="popup-technologies"></span>
+        </li>
+        <li>
+          <span class="first">Category</span>
+          <span class="second" id="popup-category"></span>
+        </li>
+        <li>
+          <span class="first">Status</span>
+          <span class="second" id="popup-status"></span>
+        </li>
+        <li>
+          <span class="first">Project Link</span>
+          <a id="popup-link" href="" target="_blank"><i class="bi bi-github"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div> <!-- ✅ Close popup-text-and-details-container -->
+</div>
+
       </div>
     </div>
     
@@ -241,8 +264,7 @@
 
 
     <!---Qualification section-->
-<id id="qualification" class="qualification-section">
-  <section class="qualification-section">
+    <section id="qualification" class="qualification-section">
     <h2 class="title">Qualification</h2>
     <div class="qualification-tabs">
       <div class="qualification-button" onclick="toggleTab('education')">
@@ -263,7 +285,7 @@
           <div class="content">
             <h3 class="qualification-title">B.Tech IT</h3>
             <span class="qualification-subtitle">Knowledge Institute Of Technology</span><br>
-            <span class="qualification-subtitle">CGPA : 9.208 [upto IV Sem]</span>
+            <span class="qualification-subtitle">CGPA : 9.038 [up to V Sem]</span>
             <div class="qualification-calendar">
               <i class="uil uil-calendar-alt"></i> 2022 - Present
             </div>
@@ -313,7 +335,7 @@
         </div>
       </div>
     </div>
-  </section></id>
+  </section>
   
 
     <!-- Testimonials Section -->
@@ -361,26 +383,28 @@
                     I firmly believe she will excel in her future endeavors within Full Stack Development.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
-                <img src="assets/img/micheal.jpeg" class="testimonial-img" alt="">
+                <img src="assets/img/micheal.png" class="testimonial-img" alt="">
                 <h3>Ramli Michael</h3>
                 <h4>Creative Director of The Branding Machans</h4>
               </div>
             </div>
     
             <!-- Testimonial 2 -->
-            <!--<div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>The website delivered was sleek, user-friendly, and exceeded our expectations. Truly outstanding work!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/sharan.jpg" class="testimonial-img" alt="">
-                <h3>Sharan Kumar</h3>
-                <h4>Frontend Developer</h4>
-              </div>
-            </div>-->
-          </div>
+            <div class="swiper-slide">
+  <div class="testimonial-item">
+    <p>
+      <i class="bi bi-quote quote-icon-left"></i>
+      I’ve had the opportunity to collaborate with Sowndariya K on several projects, and I must say, she is an incredibly talented developer with a deep understanding of web technologies and digital solutions. Her ability to create user-centric solutions is truly impressive.
+
+      Sowndariya developed a portfolio for me, and I was amazed by her attention to detail, creativity, and technical expertise. She not only delivered a visually appealing design but also ensured that the user experience was seamless and intuitive. Her problem-solving skills and commitment to quality set her apart as a developer.
+      If you're looking for someone who can translate complex requirements into effective and elegant digital solutions, Sowndariya is the one to go to. I'm confident that she will continue to achieve great success in her career. Wishing her all the best for a bright and successful future!
+      <i class="bi bi-quote quote-icon-right"></i>
+    </p>
+    <img src="assets/img/kavin.png" class="testimonial-img" alt="Kavinkumar R">
+    <h3><a href="https://www.linkedin.com/in/kavinkumar-r/" target="_blank">Kavinkumar R</a></h3>
+    <h4>Cloud Security Enthusiast </h4>
+  </div>
+</div>
           <div class="swiper-pagination"></div>
         </div>
       </div>

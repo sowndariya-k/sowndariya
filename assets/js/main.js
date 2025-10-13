@@ -279,8 +279,43 @@ const projects = {
     technologies: " HTML, CSS, JavaScript",
     category: " Frontend",
     status: " Completed",
-    link: " hhttps://r-kavinkumar.netlify.app/",
-  }
+    link: " https://kavinkumar-r.netlify.app/",
+  },
+
+  
+  logAlertProject: {
+  image: "assets/img/logalert.png", 
+  description: "A real-time log monitoring and alerting system developed to track application logs, identify error patterns, and instantly notify stakeholders using cloud-based services. The system is serverless and scalable, making it ideal for modern applications and microservice-based architectures.",
+  features: [
+    "Monitors and streams real-time application logs using AWS CloudWatch",
+    "Detects critical logs such as ERROR, CRITICAL, and 5xx codes",
+    "Automatically sends email alerts via Amazon SNS when issues are detected",
+    "Scheduled execution every 5 minutes using AWS Lambda",
+    "Designed with secure IAM roles following the least-privilege principle"
+  ],
+  technologies: "AWS (CloudWatch, Lambda, SNS), Python",
+  category: "Cloud",
+  status: "Completed",
+  link: "https://github.com/sowndariya-k/LogAlert-AWS-Monitoring"
+},
+
+spendWiseProject: {
+  image: "assets/img/spend.png",
+  tagline: "Your smart digital assistant for effortless money tracking and visual financial insights.",
+  description: "SpendWise is a modern personal finance web application built to empower users with clear insights into their financial activities. It enables effortless tracking of income, expenses, and savings while delivering visually engaging analytics that simplify money management and decision-making.",
+  features: [
+    "Provides real-time tracking of income, expenses, and savings with dynamic updates",
+    "Generates interactive line and pie charts for a deep dive into spending behavior and financial trends",
+    "Automatically categorizes transactions and delivers instant monthly summaries",
+    "Offers a one-click printable financial report for professional-grade transparency",
+    "Responsive, minimal, and intuitive interface optimized for both desktop and mobile devices"
+  ],
+  technologies: "HTML5, CSS3, JavaScript",
+  category: "Web Application",
+  status: "In Progress",
+  link: "https://github.com/sowndariya-k/SpendWise"
+}
+
 };
 
 function openPopup(projectKey) {
