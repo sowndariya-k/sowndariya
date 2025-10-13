@@ -238,7 +238,7 @@ function filterProjects(category) {
 
 const projects = {
   zekesys: {
-    image: "assets/img/work5.jpg",
+    image: "assets/img/zekesys.png",
   description: "Developed a professional business website for Zekesys, showcasing their services and enhancing their online presence with a user-friendly interface.",
   features: [
     "Modern and responsive design for seamless accessibility across devices",
@@ -253,7 +253,7 @@ const projects = {
     link: " https://zekesys.com/",
   },
   todo: {
-    image: "assets/img/work1.jpg",
+    image: "assets/img/todo.png",
     description: "A user-friendly and efficient Todo List application designed for effective task management. Users can easily add, edit, delete, and track tasks with a sleek interface.",
   features: [
     "Add, edit, and delete tasks",
@@ -268,7 +268,7 @@ const projects = {
     link: " https://sowndariya-k.github.io/TODO/",
   },
   freelanceProject: {
-    image: "assets/img/port3.jpg",
+    image: "assets/img/sk.png",
     description: " A custom-designed personal portfolio website developed as a freelance project to meet the client's specific requirements and showcase their professional profile.",
     features: [
       "Responsive and modern design for accessibility across devices",
@@ -311,8 +311,8 @@ spendWiseProject: {
     "Responsive, minimal, and intuitive interface optimized for both desktop and mobile devices"
   ],
   technologies: "HTML5, CSS3, JavaScript",
-  category: "Web Application",
-  status: "In Progress",
+  category: "Frontend",
+  status: "Completed",
   link: "https://github.com/sowndariya-k/SpendWise"
 }
 
