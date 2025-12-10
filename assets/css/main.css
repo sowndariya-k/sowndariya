@@ -1,10 +1,31 @@
-
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  /* Clean and modern typography setup */
+  --default-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --heading-font: "DM Sans", sans-serif;
+  --nav-font: "DM Sans", sans-serif;
 }
 
+/* Example usage */
+body {
+  font-family: var(--default-font);
+  line-height: 1.6;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+nav a {
+  font-family: var(--nav-font);
+  font-weight: 500;
+}
+
+p {
+  font-family: var(--default-font);
+}
 
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
@@ -585,6 +606,7 @@ section,
 /* Button Styles */
 .hero .btn-primary {
   padding: 0.8rem 2rem;
+  
   font-size: 1rem;
   font-weight: 600;
   background-color: #7c3aed; /* Purple Button */

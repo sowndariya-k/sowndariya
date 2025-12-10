@@ -326,7 +326,25 @@ spendWiseProject: {
   category: "Frontend",
   status: "Completed",
   link: "https://github.com/sowndariya-k/SpendWise"
+},
+morningAuraProject: {
+  image: "assets/img/morningaura.png",
+  tagline: "Start your day with calmness, clarity, and the right intention.",
+  description: "Morning Aura is a soothing and interactive web experience designed to inspire positivity and mindfulness at the start of each day. This project creates a calming digital space where users are welcomed with motivational affirmations, uplifting visuals, and a serene interface that encourages focus and emotional well-being.",
+  features: [
+    "Displays refreshing motivational quotes to boost mindset and productivity",
+    "Includes a gentle greeting that updates dynamically based on the time of day",
+    "Minimalistic UI with soft color palette to create a visually calming environment",
+    "Smooth transitions and elegant layout crafted for a distraction-free experience",
+    "Fully responsive across screens, ensuring a clean and welcoming design on both mobile and desktop"
+  ],
+  technologies: "HTML5, CSS3, JavaScript",
+  category: "Frontend",
+  status: "Completed",
+  link: "https://github.com/sowndariya-k/Morning-Aura",
+  liveDemo: "https://sowndariya-k.github.io/Morning-Aura/"
 }
+
 
 };
 
