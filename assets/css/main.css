@@ -1431,19 +1431,19 @@ body.popup-open {
 }
 
 .responsibility-card .highlight {
-  font-weight: 500;      /* 👈 reduces boldness */
+  font-weight: 500;     
   font-size: 1rem;
   color: #444;
 }
 
 .responsibility-card .achievement-list li {
-  border-bottom: none;   /* 👈 removes heavy separators */
+  border-bottom: none;  
   padding-bottom: 0.6rem;
   margin-bottom: 0.6rem;
 }
 
 .responsibility-card .achievement-card:hover {
-  transform: translateY(-6px); /* softer hover */
+  transform: translateY(-6px); 
 }
 
 
