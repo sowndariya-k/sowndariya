@@ -1238,6 +1238,132 @@ body.popup-open {
   }
 }
 
+/*--------------------------------------------------------------
+# Achievements Section
+--------------------------------------------------------------*/
+.achievements {
+  padding: 60px 0;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.achievement-card {
+  background: var(--surface-color);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover .card-icon {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.card-icon i {
+  font-size: 2rem;
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover .card-icon i {
+  color: var(--contrast-color);
+}
+
+.achievement-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1.5rem;
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.achievement-list li {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.achievement-list li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.highlight {
+  display: block;
+  font-weight: 700;
+  color: var(--heading-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.subtext {
+  display: block;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.year {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .achievement-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+
 
 
 /*--------------------------------------------------------------
