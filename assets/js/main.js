@@ -11,7 +11,9 @@
     headerToggleBtn.classList.toggle("bi-list");
     headerToggleBtn.classList.toggle("bi-x");
   }
-  headerToggleBtn.addEventListener("click", headerToggle);
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener("click", headerToggle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -62,13 +64,15 @@
         : scrollTop.classList.remove("active");
     }
   }
-  scrollTop.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+  if (scrollTop) {
+    scrollTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     });
-  });
+  }
 
   window.addEventListener("load", toggleScrollTop);
   document.addEventListener("scroll", toggleScrollTop);
@@ -84,37 +88,9 @@
       mirror: false,
     });
   }
-  window.addEventListener("load", aosInit);
-
-  /**
-   * Init typed.js
-   */
-  const selectTyped = document.querySelector(".typed");
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute("data-typed-items");
-    typed_strings = typed_strings.split(",");
-    new Typed(".typed", {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000,
-    });
+  if (window.AOS) {
+    window.addEventListener("load", aosInit, { once: true });
   }
-
-  /**
-   * Initiate Pure Counter
-   */
-  window.addEventListener("load", () => {
-    new PureCounter();
-  });
-
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: ".glightbox",
-  });
 
   /**
    * Init swiper sliders
@@ -133,7 +109,9 @@
     });
   }
 
-  window.addEventListener("load", initSwiper);
+  if (window.Swiper) {
+    window.addEventListener("load", initSwiper, { once: true });
+  }
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
@@ -407,5 +385,111 @@ Message: ${message}
     const hiddenLink = document.createElement("a");
     hiddenLink.href = mailToLink;
     hiddenLink.click();
+  });
+});
+
+/**
+ * Portfolio assistant
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const chat = document.querySelector(".portfolio-chat");
+  const toggle = document.getElementById("portfolio-chat-toggle");
+  const close = document.getElementById("chat-close");
+  const panel = document.getElementById("portfolio-chat-panel");
+  const form = document.getElementById("portfolio-chat-form");
+  const input = document.getElementById("portfolio-chat-input");
+  const messages = document.getElementById("portfolio-chat-messages");
+
+  if (!chat || !toggle || !close || !panel || !form || !input || !messages) {
+    return;
+  }
+
+  const answers = {
+    skills:
+      "Sowndariya focuses on manual testing, Selenium with Java and Python, Playwright with TypeScript, API validation, Rest Assured, TestNG, Pytest, Cucumber BDD, SQL, and JMeter.",
+    projects:
+      "Her work includes OrangeHRM manual and performance testing, Java and Python Selenium frameworks, a Playwright BDD framework, SpendWise, Zekesys, and a blockchain-based secure voting system.",
+    education:
+      "She is pursuing a B.Tech in Information Technology at Knowledge Institute of Technology, with a CGPA of 8.981, from 2022 to 2026.",
+    certifications:
+      "Sowndariya holds ISTQB Foundation Level certification, completed 980 hours of Software Testing Training from SmartCliff Learning Solutions, completed AWS Cloud Practitioner Essentials, and earned an Ethical Hacking certification from NPTEL in 2024.",
+    achievements:
+      "Her achievements include Academic Topper in 2024, Achievers Day Awards in 2024 and 2025, 1st place in the Web3 and Blockchain track at Ease The Error Hackathon 5.0, and 3rd place finishes in Appathon and ISTE Hackathon.",
+    publication:
+      "She co-authored the IEEE Xplore 2024 publication 'Blockchain Technology in Secure Voting Systems: Enhancing Transparency and Trust'. DOI: 10.1109/ICCES63552.2024.10860165.",
+    linkedin:
+      "You can view Sowndariya's professional profile on <a href=\"https://www.linkedin.com/in/sowndariya-k/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a>.",
+    contact:
+      "You can reach Sowndariya at sowndariyadeveloper@gmail.com or +91 6374867255. You can also connect through her <a href=\"https://www.linkedin.com/in/sowndariya-k/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn profile</a>.",
+    default:
+      "I can share details about testing skills, projects, education, or contact information. Try one of the quick questions below."
+  };
+
+  function getAnswer(message) {
+    const question = message.toLowerCase();
+    if (question.includes("certif") || question.includes("istqb") || question.includes("aws cloud") || question.includes("ethical hacking")) {
+      return answers.certifications;
+    }
+    if (question.includes("achievement") || question.includes("award") || question.includes("hackathon")) {
+      return answers.achievements;
+    }
+    if (question.includes("publication") || question.includes("ieee") || question.includes("doi")) {
+      return answers.publication;
+    }
+    if (question.includes("linkedin") || question.includes("profile")) {
+      return answers.linkedin;
+    }
+    if (question.includes("skill") || question.includes("tool") || question.includes("test")) {
+      return answers.skills;
+    }
+    if (question.includes("project") || question.includes("work") || question.includes("built")) {
+      return answers.projects;
+    }
+    if (question.includes("education") || question.includes("degree") || question.includes("study")) {
+      return answers.education;
+    }
+    if (question.includes("contact") || question.includes("email") || question.includes("phone")) {
+      return answers.contact;
+    }
+    return answers.default;
+  }
+
+  function addMessage(message, type) {
+    const element = document.createElement("div");
+    element.className = `chat-message ${type}-message`;
+    if (type === "assistant") {
+      element.innerHTML = message;
+    } else {
+      element.textContent = message;
+    }
+    messages.appendChild(element);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function ask(message) {
+    const cleanMessage = message.trim();
+    if (!cleanMessage) return;
+    addMessage(cleanMessage, "user");
+    addMessage(getAnswer(cleanMessage), "assistant");
+  }
+
+  function setChatOpen(isOpen) {
+    chat.classList.toggle("is-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    panel.setAttribute("aria-hidden", String(!isOpen));
+    if (isOpen) input.focus();
+  }
+
+  toggle.addEventListener("click", () => setChatOpen(!chat.classList.contains("is-open")));
+  close.addEventListener("click", () => setChatOpen(false));
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    ask(input.value);
+    input.value = "";
+  });
+
+  document.querySelectorAll("[data-chat-prompt]").forEach((button) => {
+    button.addEventListener("click", () => ask(button.dataset.chatPrompt));
   });
 });
